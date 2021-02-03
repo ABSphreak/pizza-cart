@@ -5,10 +5,12 @@ import { listProducts } from '../actions/productActions';
 import Product from '../components/Product';
 
 const HomeWrapper = styled.section`
+  background-color: #f5f3f4;
+  z-index: 1;
   padding: 3em 2em;
   .product-list {
     display: grid;
-    grid-gap: 1.5rem;
+    grid-gap: 1.75rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 `;
