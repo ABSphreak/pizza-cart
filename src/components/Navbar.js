@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const NavbarWrapper = styled.nav`
   background: linear-gradient(to right, #141e30, #243b55);
@@ -13,6 +14,9 @@ const NavbarWrapper = styled.nav`
         font-weight: 600;
         font-size: 1.5rem;
         color: white;
+        .cart-link {
+          display: flex;
+        }
       }
     }
   }
@@ -29,7 +33,14 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">
+            <div className="cart-link">
+              <div className="cart-icon">
+                <AiOutlineShoppingCart />
+              </div>
+              <div>Cart</div>
+            </div>
+          </Link>
         </li>
       </ul>
     </NavbarWrapper>
