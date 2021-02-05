@@ -2,7 +2,7 @@
   <img src="src/pizza-logo.svg" alt="pizza logo" width="200">
   <h1>🍕 Pizza Cart</h1>
   <em>Pizza Cart Application in React.</em><br/>
-  <h4><a href="abs.sh" target="_blank">« Check Demo »</a></h4>
+  <h4><a href="#" target="_blank">« Check Demo »</a></h4>
 </div>
 
 ## 🧨 Getting Started
