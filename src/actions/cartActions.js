@@ -2,6 +2,7 @@ import axios from 'axios';
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants';
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
+  // Getting data from API for adding to Cart
   const { data } = await axios.get(
     `https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68/`
   );
