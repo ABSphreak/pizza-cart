@@ -15,7 +15,7 @@ const HomeWrapper = styled.section`
   }
 `;
 
-const HomeScreen = () => {
+const HomeScreen = ({ history, match }) => {
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
@@ -41,6 +41,8 @@ const HomeScreen = () => {
             isVeg={product.isVeg}
             size={product.size[0]}
             toppings={product.toppings[0]}
+            historyMain={history}
+            id={product.id}
           />
         ))}
       </div>
