@@ -27,6 +27,8 @@ const HomeScreen = () => {
 
   return (
     <HomeWrapper>
+      {error ? <h3>{error}</h3> : null}
+      {loading ? <h3>Loading ...</h3> : null}
       <div className="product-list">
         {products.map((product) => (
           <Product
