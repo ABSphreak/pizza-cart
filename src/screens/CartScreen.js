@@ -41,6 +41,7 @@ const CartScreen = ({ match, location }) => {
                   <img src={item.img_url} alt={item.name} width="300" />
                   <h3>{item.name}</h3>
                   <p>{item.price}</p>
+                  <p>{item.qty}</p>
                   <button onClick={() => removeFromCartHandler(item.product)}>
                     Delete
                   </button>
