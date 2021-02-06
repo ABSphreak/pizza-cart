@@ -92,6 +92,9 @@ const ProductModal = ({
   toppings,
   price,
   isVeg,
+  qty,
+  historyMain,
+  id,
 }) => {
   const [pizzaSize, setPizzaSize] = useState('');
   const [pizzaToppings, setPizzaToppings] = useState({});
@@ -99,6 +102,8 @@ const ProductModal = ({
   const handleAdd = () => {
     console.log(pizzaToppings);
     console.log(`Radio value → ${pizzaSize}`);
+    console.log(id);
+    historyMain.push(`/cart/${id}?qty=${qty}`);
   };
 
   if (!showModal) return null;

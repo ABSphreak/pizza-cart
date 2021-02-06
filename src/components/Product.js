@@ -117,6 +117,7 @@ const ProductWrapper = styled.div`
 `;
 
 const Product = ({
+  id,
   name,
   description,
   imgUrl,
@@ -125,6 +126,7 @@ const Product = ({
   rating,
   size,
   toppings,
+  historyMain,
 }) => {
   const [qty, setQty] = useState(1);
   const [showModal, setShowModal] = useState(false);
@@ -174,10 +176,13 @@ const Product = ({
         setShowModal={setShowModal}
         size={size}
         toppings={toppings}
+        id={id}
         name={name}
         imgUrl={imgUrl}
         price={price}
         isVeg={isVeg}
+        qty={qty}
+        historyMain={historyMain}
       />
     </ProductWrapper>
   );
