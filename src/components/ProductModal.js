@@ -58,6 +58,8 @@ const ModalContent = styled.div`
         margin: 3px 0;
       }
     }
+    .cart-btn {
+    }
   }
   .right {
     width: 50%;
@@ -103,7 +105,7 @@ const ProductModal = ({
     console.log(pizzaToppings);
     console.log(`Radio value → ${pizzaSize}`);
     console.log(id);
-    historyMain.push(`/cart/${id}?qty=${qty}`);
+    historyMain.push(`/cart/${id}?qty=${qty}&size=${pizzaSize}`);
   };
 
   if (!showModal) return null;
@@ -122,17 +124,19 @@ const ProductModal = ({
               {/* <h4>{size.title}</h4> */}
               <h4>Choose size:</h4>
               <div className="size-options">
-                {size.items.map((item) => (
-                  <label htmlFor="size">
-                    <input
-                      key={item.size}
-                      type="radio"
-                      name="size"
-                      value={item.size}
-                      onChange={(e) => setPizzaSize(e.target.value)}
-                    />
-                    {item.size}
-                  </label>
+                {size.items.map((item, i) => (
+                  <div key={i}>
+                    <label htmlFor="size">
+                      <input
+                        key={item.size}
+                        type="radio"
+                        name="size"
+                        value={item.size}
+                        onChange={(e) => setPizzaSize(e.target.value)}
+                      />
+                      {item.size}
+                    </label>
+                  </div>
                 ))}
               </div>
             </div>
@@ -140,8 +144,8 @@ const ProductModal = ({
               {/* <h4>{toppings.title}</h4> */}
               <h4>Choose toppings:</h4>
               <div className="toppings-options">
-                {toppings.items.map((item) => (
-                  <div>
+                {toppings.items.map((item, i) => (
+                  <div key={i}>
                     <input
                       key={item.name}
                       type="checkbox"
@@ -159,7 +163,9 @@ const ProductModal = ({
                 ))}
               </div>
             </div>
-            <button onClick={handleAdd}>Add to cart</button>
+            <button className="cart-btn" onClick={handleAdd}>
+              Add to cart
+            </button>
           </div>
           <div className="right">
             <img src={imgUrl} alt={name} />
