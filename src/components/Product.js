@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import ProductModal from './ProductModal';
+import Rating from './Rating';
 import { BiFoodTag } from 'react-icons/bi';
 
 const ProductWrapper = styled.div`
@@ -152,6 +153,7 @@ const Product = ({
             <h4>₹ {price}</h4>
           </div>
           <p>{description}</p>
+          <Rating rating={rating} />
         </div>
         <div className="actions-wrapper">
           <div className="actions">
