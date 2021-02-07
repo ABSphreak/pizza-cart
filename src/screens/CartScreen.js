@@ -171,13 +171,12 @@ const CartScreen = ({ match }) => {
                         <p>Size: {item.size}</p>
                       </div>
                       <p>
-                        {item.toppingsParam.split(',').length > 0
-                          ? item.toppingsParam
-                              .split(',')
-                              .map((topping) => (
-                                <span className="topping">{topping}</span>
-                              ))
-                          : null}
+                        {item.toppingsParam &&
+                          item.toppingsParam
+                            .split(',')
+                            .map((topping) => (
+                              <span className="topping">{topping}</span>
+                            ))}
                       </p>
                     </div>
 
