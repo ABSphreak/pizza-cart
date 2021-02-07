@@ -23,11 +23,17 @@ const ModalWrapper = styled.div`
     background: transparent;
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    button.close {
+      right: 6%;
+      color: #000;
+    }
+  }
 `;
 
 const ModalContent = styled.div`
   display: flex;
-  height: 450px;
+  height: 470px;
   width: 550px;
   .left {
     padding: 25px 0 25px 25px;
@@ -62,6 +68,7 @@ const ModalContent = styled.div`
     }
   }
   .right {
+    display: block;
     width: 50%;
     height: 100%;
     margin: 0;
@@ -73,6 +80,23 @@ const ModalContent = styled.div`
       border-radius: 0 15px 15px 0;
     }
   }
+  button.cart-btn {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: #22223b;
+    color: #f5f3f4;
+  }
+  @media (max-width: 768px) {
+    width: 300px;
+    height: auto;
+    .right {
+      display: none;
+    }
+  }
 `;
 
 const OverlayComponent = styled.div`
@@ -81,6 +105,7 @@ const OverlayComponent = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  backdrop-filter: saturate(120%) blur(20px);
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 `;
@@ -105,7 +130,14 @@ const ProductModal = ({
     console.log(pizzaToppings);
     console.log(`Radio value → ${pizzaSize}`);
     console.log(id);
-    historyMain.push(`/cart/${id}?qty=${qty}&size=${pizzaSize}`);
+    // convert pizzaToppings to a query string
+    const toppingsParam = Object.keys(pizzaToppings)
+      .map((key) => `${key}`)
+      .join(',');
+
+    historyMain.push(
+      `/cart/${id}?qty=${qty}&size=${pizzaSize}&toppings=${toppingsParam}`
+    );
   };
 
   if (!showModal) return null;
@@ -130,6 +162,7 @@ const ProductModal = ({
                       <input
                         key={item.size}
                         type="radio"
+                        required
                         name="size"
                         value={item.size}
                         onChange={(e) => setPizzaSize(e.target.value)}
