@@ -32,9 +32,10 @@ Follow the below steps to get the project working.
 ## ⚡ Features List
 
 1. Listing all pizzas from this [endpoint](https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68)
-2. SPA design
-3. Redux State Management
-4. Dynamic Cart checkout
+2. Custom UI - Styled Components
+3. SPA design
+4. Redux State Management
+5. Dynamic Cart checkout
 
 ## 🗃 Tech Stack
 
