@@ -1,7 +1,7 @@
 <div align="center">
   <img src="src/pizza-logo.svg" alt="pizza logo" width="200">
   <h1>🍕 Pizza Cart</h1>
-  <em>Pizza Cart Application in React ⚛️.</em><br/>
+  <em>Pizza Cart Application in React ⚛️ & Styles Components :atom:.</em><br/>
   <h4><a href="https://pizza-cart.netlify.app/" target="_blank">« Check Demo »</a></h4>
 </div>
 
